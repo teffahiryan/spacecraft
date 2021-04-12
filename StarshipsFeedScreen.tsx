@@ -1,7 +1,7 @@
 import React from "react"
 import { useQuery } from 'react-query';
 import fetchAsync from './lib/fetch';
-import { SafeAreaView, StyleSheet, Text, StatusBar, View, FlatList, TouchableOpacity  } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, StatusBar, View, FlatList, TouchableOpacity, ScrollView  } from 'react-native';
 //import { data } from './data';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import AppLayout from './AppLayout';
@@ -13,12 +13,12 @@ const StarshipsFeed = () => {
     
     if (isError) { return <Text>Error</Text> }
     if (isLoading) { return <Text>Loading...</Text> }
-    //<FlatList data={data} renderItem={RenderItem} />
+    //<FlatList data={data} renderItem={RenderItem} /> 
 
     //if (data.results === undefined) { return <Text>Not found...</Text> }
     if (data.results === undefined) { return <Text>Not found...</Text> }
       return (
-        <View>
+        <ScrollView>
           { 
                   data.results.map((starships) => {
                     return(
@@ -32,25 +32,18 @@ const StarshipsFeed = () => {
                    )
                   })
           }
-        </View>
+        </ScrollView>
       );
   };
 
 const StarshipsFeedScreen = () => {
-
       return (
-    
           <AppLayout title="Starships">
               <View style={styles.container}>
                   <StarshipsFeed></StarshipsFeed>
               </View>
           </AppLayout>
-        
-    
       );
-    
-
-
 }
 
 const styles = StyleSheet.create({
