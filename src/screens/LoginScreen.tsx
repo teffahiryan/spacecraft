@@ -14,12 +14,21 @@ export default function App() {
   const [password, setPassword] = React.useState("");
 
   const login = "ryan";
-  const mdp = "oui1234";
+  const mdp = "oui";
 
   const navigation = useNavigation();
   const handlePress = () => {
     navigation.navigate(AppRoute.TERMS_SCREEN);
   };
+  const handlePress2 = () => {
+    navigation.navigate(AppRoute.STARSHIP_FEED_SCREEN);
+  };
+
+  function fakeConnection() {
+    if (login == text || mdp == password) {
+      handlePress2();
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -41,7 +50,7 @@ export default function App() {
       <Button
         style={styles.input}
         mode="contained"
-        onPress={() => console.log("Pressed")}
+        onPress={() => fakeConnection()}
       >
         Login
       </Button>
@@ -62,11 +71,10 @@ const styles = StyleSheet.create({
     margin: 0,
     marginBottom: 25,
     padding: 40,
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
-    color: "white",
-    backgroundColor: "#6703ef",
+    color: "#6703ef",
   },
   condition: {
     margin: 24,

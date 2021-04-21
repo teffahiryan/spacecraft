@@ -22,7 +22,9 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <NavigationContainer>
-      <SpaceStack />
+      <QueryClientProvider client={queryClient}>
+        <SpaceStack />
+      </QueryClientProvider>
     </NavigationContainer>
   );
 };

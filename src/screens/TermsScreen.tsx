@@ -13,7 +13,6 @@ export default function App() {
   return (
     <View>
       <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
         <Appbar.Content title="Terms and Conditions" />
       </Appbar.Header>
       <View style={{ padding: 32 }}>
