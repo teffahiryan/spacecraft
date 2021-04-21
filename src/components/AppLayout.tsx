@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Headline } from 'react-native-paper';
-import { NetworkProvider } from 'react-native-offline';
+import React, { ReactElement } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Headline } from "react-native-paper";
+import { NetworkProvider } from "react-native-offline";
 
 interface Props {
   title: string;
